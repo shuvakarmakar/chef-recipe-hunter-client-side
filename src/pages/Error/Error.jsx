@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 
 const Error = () => {
@@ -8,7 +9,7 @@ const Error = () => {
                     <div>
                         <h2 className="text-center text-3xl font-extrabold text-gray-900">404 Not Found</h2>
                         <p className="mt-2 text-center text-sm text-gray-600">
-                            The page you're looking for could not be found.
+                            The page you are looking for could not be found.
                         </p>
                     </div>
                 </div>
