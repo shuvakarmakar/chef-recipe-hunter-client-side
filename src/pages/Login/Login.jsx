@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -59,9 +60,9 @@ const Login = () => {
                 </div>
             </form>
             <div className='flex justify-center items-center my-auto'>
-                <button className="btn btn-outline">SignIn With Google</button>
+                <button className="btn btn-outline"><FaGoogle></FaGoogle>SignIn With Google</button>
                 <br />
-                <button className="text-center btn btn-outline">SignIn With Github</button>
+                <button className="btn btn-outline"><FaGithub></FaGithub>SignIn With Github</button>
             </div>
         </div>
     );
