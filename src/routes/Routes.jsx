@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Recipes from "../pages/Recipes/Recipes";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/recipes/:id",
-                element: <Recipes></Recipes>,
+                element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
                 loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side-shuvakarmakar.vercel.app/recipes/${params.id}`)
             }
         ]
