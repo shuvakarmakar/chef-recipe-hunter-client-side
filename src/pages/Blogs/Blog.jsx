@@ -15,7 +15,7 @@ const Blog = () => {
                 <p className='text-lg font-bold mt-5'>Question 2 : How to validate React props using PropTypes?</p>
                 <p className='text-justify mt-4'><span className='font-bold'>Answer : </span>Props are an important mechanism for passing the read-only attributes to React components. The props are usually required to use correctly in the component. If it is not used correctly, the components may not behave as expected. Hence, it is required to use props validation in improving react components.
 
-Props validation is a tool that will help the developers to avoid future bugs and problems. It is a useful way to force the correct usage of your components. It makes your code more readable. React components used special property PropTypes that help you to catch bugs by validating data types of values passed through props, although it is not necessary to define components with propTypes. However, if you use propTypes with your components, it helps you to avoid unexpected bugs.</p>
+                    Props validation is a tool that will help the developers to avoid future bugs and problems. It is a useful way to force the correct usage of your components. It makes your code more readable. React components used special property PropTypes that help you to catch bugs by validating data types of values passed through props, although it is not necessary to define components with propTypes. However, if you use propTypes with your components, it helps you to avoid unexpected bugs.</p>
                 <br />
                 <p><span className='font-bold'>App.propTypes</span> is used for props validation in react component. When some of the props are passed with an invalid type, you will get the warnings on JavaScript console. After specifying the validation patterns, you will set the App.defaultProps.</p>
 
@@ -23,19 +23,29 @@ Props validation is a tool that will help the developers to avoid future bugs an
                 <p className='text-justify mt-4'><span className='font-bold'>Answer : </span>Node.js and Express.js are both JavaScript-based technologies used for building server-side web applications, but they serve different purposes.</p>
                 <br />
                 <p>Here are some key differences between Node.js and Express.js:
-                <br />
-                i.Node.js is a runtime environment, while Express.js is a web application framework built on top of Node.js.
-                <br />
-                ii.Node.js provides a set of built-in modules for handling network requests, file I/O, and other system-level tasks, while Express.js provides a set of tools and utilities for building web applications.
-                <br />
-                iii.Node.js can be used on its own to build web applications, but it requires a lot of low-level coding. Express.js simplifies the process of building web applications by providing a higher-level API.
-                <br />
-                iv.Node.js is suitable for building a wide range of server-side applications, while Express.js is specifically designed for building web applications.</p>
+                    <br />
+                    i.Node.js is a runtime environment, while Express.js is a web application framework built on top of Node.js.
+                    <br />
+                    ii.Node.js provides a set of built-in modules for handling network requests, file I/O, and other system-level tasks, while Express.js provides a set of tools and utilities for building web applications.
+                    <br />
+                    iii.Node.js can be used on its own to build web applications, but it requires a lot of low-level coding. Express.js simplifies the process of building web applications by providing a higher-level API.
+                    <br />
+                    iv.Node.js is suitable for building a wide range of server-side applications, while Express.js is specifically designed for building web applications.</p>
 
                 <p className='text-lg font-bold mt-5'>Question 4 : What is a custom hook, and why will you create a custom hook?</p>
-                <p className='text-justify mt-4'><span className='font-bold'>Answer : </span>useMemo() is a hook that allows us to memoize expensive computations so that they are only recomputed when their dependencies change. This can help improve the performance of our application by avoiding unnecessary computations.
-
-                    useMemo takes a function and an array of dependencies as arguments. The function is only re-executed when one of the dependencies changes. If none of the dependencies have changed since the last render, the memoized value from the previous render is returned instead.</p>
+                <p className='text-justify mt-4'><span className='font-bold'>Answer : </span>In React, a custom hook is a reusable function that encapsulates common logic or behavior, which can be shared across multiple components. Custom hooks enable developers to extract and reuse stateful logic from components, making them more modular and reusable.
+                    <br />
+                    We can create a custom hook to encapsulate complex logic that is used in multiple components, making the components more readable, reusable and easier to maintain. Custom hooks can also abstract away complex functionality, allowing components to focus on their specific task while delegating more complex tasks to custom hooks.
+                    <br />
+                    Some common use cases for custom hooks include:
+                    <br />
+                    1.Fetching data from an API.
+                    <br />
+                    2.Handling form input validation and submission.
+                    <br />
+                    3.Managing state for complex components.
+                    <br />
+                    4.Creating reusable utility functions.</p>
                 <br />
             </div>
         </div>
