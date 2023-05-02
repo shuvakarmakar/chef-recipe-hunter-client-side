@@ -1,38 +1,61 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import image1 from '../../assets/food-7006591_1280.jpg';
+import image2 from '../../assets/snow-crab-2620060_1280.jpg';
+import image3 from '../../assets/sushi-2455981_1280.jpg';
+import image4 from '../../assets/sushi-2853382_1280.jpg';
+import ChefsCard from '../ChefsCard/ChefsCard';
 
 const Home = () => {
+    const [chefs, setChefs] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/chefs')
+            .then(res => res.json())
+            .then(data => setChefs(data))
+            .catch(error => console.error(error))
+    }, [])
     return (
         <div>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
+                    <img src={image1} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+                    <img src={image2} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
-                    <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+                    <img src={image3} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
                         <a href="#slide4" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
-                    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+                    <img src={image4} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
+            </div>
+            {/* Chefs Card Work */}
+            <h3 className='text-center text-5xl mt-10'>Chef Section</h3>
+            <div className='grid lg:grid-cols-3 gap-3 align-middle lg:m-10'>
+                {
+                    chefs.map(chef => <ChefsCard
+                        key={chef.id}
+                        chef={chef}
+                    ></ChefsCard>)
+                }
             </div>
         </div>
     );
