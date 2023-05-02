@@ -5,6 +5,8 @@ import image2 from '../../assets/snow-crab-2620060_1280.jpg';
 import image3 from '../../assets/sushi-2455981_1280.jpg';
 import image4 from '../../assets/sushi-2853382_1280.jpg';
 import ChefsCard from '../ChefsCard/ChefsCard';
+import ExtraSection from './ExtraSection';
+
 
 const Home = () => {
     const [chefs, setChefs] = useState([]);
@@ -48,7 +50,7 @@ const Home = () => {
                 </div>
             </div>
             {/* Chefs Card Work */}
-            <h3 className='text-center text-5xl mt-10'>Chef Section</h3>
+            <h3 className='text-center text-3xl font-bold mb-8 mt-8'>Chef Section</h3>
             <div className='grid lg:grid-cols-3 gap-3 align-middle lg:m-10'>
                 {
                     chefs.map(chef => <ChefsCard
@@ -57,6 +59,7 @@ const Home = () => {
                     ></ChefsCard>)
                 }
             </div>
+            <ExtraSection></ExtraSection>
         </div>
     );
 };
