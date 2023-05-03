@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import React, { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import html2pdf from 'html2pdf.js';
 
 const Header = () => {
     // Import user and logout from AuthProvider
@@ -12,6 +14,12 @@ const Header = () => {
             .then()
             .catch(error => console.log(error))
     }
+
+    const handleDownloadPDF = () => {
+        html2pdf()
+          .from(document.querySelector('#pdf-container'))
+          .save();
+      };
 
     return (
         <div>
@@ -39,7 +47,9 @@ const Header = () => {
                     </div>
                     <ul className="navbar-end">
                         {user ?
-                            <li><button onClick={handleSignout} className='btn btn-secondary'>Logout</button></li> :
+                            <>
+                                <li><button onClick={handleDownloadPDF} className='btn btn-secondary'>Download PDF</button></li>
+                                <li><button onClick={handleSignout} className='btn btn-secondary'>Logout</button></li></> :
                             <li><button className='btn btn-accent'><Link to="/login">Login</Link></button></li>}
                     </ul>
                 </div>

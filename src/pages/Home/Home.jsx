@@ -18,7 +18,7 @@ const Home = () => {
             .catch(error => console.error(error))
     }, [])
     return (
-        <div>
+        <div id='pdf-container'>
             {/* Carousel */}
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">

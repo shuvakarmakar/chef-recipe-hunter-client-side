@@ -14,7 +14,7 @@ const Recipes = () => {
     const [isFavourite, setIsFavourite] = useState(false);
 
     return (
-        <div>
+        <div id='pdf-container'>
             <div className="card card-side bg-neutral-100 shadow-xl w-4/5 mx-auto mt-10">
                 <figure className='lg:w-full'><img className='lg:h-full lg:w-full' src={chefPicture} alt="Movie" /></figure>
                 <div className="card-body">

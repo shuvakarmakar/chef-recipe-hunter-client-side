@@ -3,7 +3,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
+        <div id='pdf-container'>
             <div className='card p-10'>
                 <p className='text-lg font-bold'>Question 1 : Differences between uncontrolled and controlled components?</p>
                 <p className='text-justify mt-4'><span className='font-bold'>Answer : </span>
