@@ -107,8 +107,8 @@ const Register = () => {
 
                 </div>
                 <p><small>Already Have an Account? Please <Link className='text-blue-500' to='/login'>Login</Link></small></p>
-                <p className='text-danger'>{error}</p>
-                <p className='text-success'>{success}</p>
+                <p className='text-error font-bold text-lg'>{error}</p>
+                <p className='text-success font-bold text-lg'>{success}</p>
             </form>
         </div>
     );

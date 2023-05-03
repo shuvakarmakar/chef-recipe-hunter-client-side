@@ -19,6 +19,7 @@ const Home = () => {
     }, [])
     return (
         <div>
+            {/* Carousel */}
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={image1} className="w-full" />

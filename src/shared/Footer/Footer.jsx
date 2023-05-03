@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -23,10 +25,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                         <ul className="flex space-x-4">
-                            <li><a href="#" className="text-gray-400 hover:text-gray-500"><i className="fab fa-facebook"></i></a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-500"><i className="fab fa-twitter"></i></a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-500"><i className="fab fa-instagram"></i></a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-500"><i className="fab fa-pinterest"></i></a></li>
+                            <li><Link><FaFacebook></FaFacebook></Link></li>
+                            <li><Link><FaTwitter></FaTwitter></Link></li>
+                            <li><Link><FaInstagram></FaInstagram></Link></li>
+                            
                         </ul>
                     </div>
                 </div>
