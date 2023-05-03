@@ -3,13 +3,14 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { signInWithGoogle, signIn } = useContext(AuthContext);
+    const { signInWithGithub, signInWithGoogle, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider();
 
     const from = location.state?.from?.pathname || '/';
 
@@ -33,8 +34,21 @@ const Login = () => {
             });
     }
 
+    // Handle Google Login
     const handleGoogleLogin = () => {
-        signInWithGoogle(provider)
+        signInWithGoogle(googleProvider)
+            .then((result) => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+    // Handle Github Login
+    const handleGithubLogin = () => {
+        signInWithGithub(gitProvider)
             .then((result) => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -81,7 +95,7 @@ const Login = () => {
             <div className='flex justify-center items-center my-auto'>
                 <button onClick={handleGoogleLogin} className="btn btn-outline"><FaGoogle></FaGoogle>SignIn With Google</button>
                 <br />
-                <button className="btn btn-outline"><FaGithub></FaGithub>SignIn With Github</button>
+                <button onClick={handleGithubLogin} className="btn btn-outline"><FaGithub></FaGithub>SignIn With Github</button>
             </div>
         </div>
     );
