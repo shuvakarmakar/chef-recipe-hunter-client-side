@@ -1,11 +1,18 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Recipes = () => {
     const allRecipes = useLoaderData();
     console.log(allRecipes);
     const { chefName, chefPicture, likes, numRecipes, recipes, yearsOfExperience, chefsDescription } = allRecipes;
+
+    // Favourite State for Disable
+    const [isFavourite, setIsFavourite] = useState(false);
+
     return (
         <div>
             <div className="card card-side bg-neutral-100 shadow-xl w-4/5 mx-auto mt-10">
@@ -16,9 +23,15 @@ const Recipes = () => {
                     <p className='font-semibold'>Likes : {likes}</p>
                     <p className='font-semibold'>Total Number of Recipes : {numRecipes}</p>
                     <p className='font-semibold'>Experience : {yearsOfExperience} Years</p>
-                    {/* <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
-                    </div> */}
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-primary" onClick={() => {
+                            setIsFavourite(true);
+                            toast.success("Added to Favourites!");
+                        }} disabled={isFavourite}>Favourite</button>
+
+
+                    </div>
+                    <ToastContainer></ToastContainer>
                 </div>
             </div>
             {/* FOr Display Recipes */}
