@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import html2pdf from 'html2pdf.js';
+import { FaDownload } from 'react-icons/fa';
 
 const Header = () => {
     // Import user and logout from AuthProvider
@@ -17,9 +17,9 @@ const Header = () => {
 
     const handleDownloadPDF = () => {
         html2pdf()
-          .from(document.querySelector('#pdf-container'))
-          .save();
-      };
+            .from(document.querySelector('#pdf-container'))
+            .save();
+    };
 
     return (
         <div>
@@ -36,7 +36,7 @@ const Header = () => {
                                 <li><Link to="/contactus">Contact Us</Link></li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost normal-case text-xl">Japanese Cuisine</a>
+                        <a className="btn btn-ghost normal-case text-xl">JC House</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
@@ -46,10 +46,20 @@ const Header = () => {
                         </ul>
                     </div>
                     <ul className="navbar-end">
+
                         {user ?
                             <>
-                                <li><button onClick={handleDownloadPDF} className='btn btn-secondary'>Download PDF</button></li>
-                                <li><button onClick={handleSignout} className='btn btn-secondary'>Logout</button></li></> :
+                                <li className="relative inline-block">
+                                    <button className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out mr-2">
+                                        <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+                                    </button>
+                                </li>
+                                <li><span className="text-gray-500 mr-2">Welcome, {user.displayName}</span></li>
+                                <li><FaDownload className='mr-2' onClick={handleDownloadPDF}></FaDownload></li>
+                                <li><button onClick={handleSignout} className='btn btn-secondary'>Logout</button></li>
+                                
+
+                            </> :
                             <li><button className='btn btn-accent'><Link to="/login">Login</Link></button></li>}
                     </ul>
                 </div>

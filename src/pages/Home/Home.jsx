@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
+import LazyLoad from 'react-lazy-load';
 import image1 from '../../assets/food-7006591_1280.jpg';
 import image2 from '../../assets/snow-crab-2620060_1280.jpg';
 import image3 from '../../assets/sushi-2455981_1280.jpg';
