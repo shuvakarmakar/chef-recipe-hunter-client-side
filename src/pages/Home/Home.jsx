@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <div id='pdf-container'>
             {/* Carousel */}
-            <div className="carousel w-full">
+            <div className="carousel w-full h-[650px]">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={image1} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

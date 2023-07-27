@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <div>
             < div >
-                <div className="navbar bg-sky-50">
+                <div className="navbar bg-sky-50 shadow-xl">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -50,7 +50,7 @@ const Header = () => {
                         {user ?
                             <>
                                 <li className="relative inline-block">
-                                    <button className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out mr-2">
+                                    <button className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-blue transition duration-150 ease-in-out mr-2">
                                         <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
                                     </button>
                                 </li>
